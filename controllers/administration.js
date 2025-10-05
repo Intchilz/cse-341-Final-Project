@@ -2,6 +2,9 @@ const { create } = require('domain');
 const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
+const { adminValidationRules, validate } = require('../middleware/validation');
+
+
 const getAll = async (req, res, next) => {
   //#swagger.tags = ['Administration']
   try {

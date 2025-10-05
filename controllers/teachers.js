@@ -1,6 +1,9 @@
 const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
+const { teacherValidationRules, validate } = require('../middleware/validation');
+
+
 const getAll = async (req, res, next) => {
   //#swagger.tags = ['Teachers']
   try {

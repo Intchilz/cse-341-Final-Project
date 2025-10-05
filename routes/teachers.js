@@ -1,17 +1,17 @@
 const express = require('express');
 const router = express.Router();
 
-const contactsController = require('../controllers/teachers');
+const teacherController = require('../controllers/teachers');
+const { teacherValidationRules, validate } = require('../middleware/validation');
 
-router.get('/', contactsController.getAll);
+router.get('/', teacherController.getAll);
 
-router.get('/:id', contactsController.getSingle);
+router.get('/:id', teacherController.getSingle);
 
-router.post('/', contactsController.createTeacher);
+router.post('/', teacherValidationRules(), validate, teacherController.createTeacher);
+router.put('/:id', teacherValidationRules(), validate, teacherController.updateTeacher);
+router.delete('/:id', teacherValidationRules(), validate, teacherController.deleteTeacher);
 
-router.put('/:id', contactsController.updateTeacher);
-
-router.delete('/:id', contactsController.deleteTeacher);
 
 module.exports = router;
 
