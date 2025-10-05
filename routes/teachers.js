@@ -10,7 +10,7 @@ router.get('/:id', teacherController.getSingle);
 
 router.post('/', teacherValidationRules(), validate, teacherController.createTeacher);
 router.put('/:id', teacherValidationRules(), validate, teacherController.updateTeacher);
-router.delete('/:id', teacherValidationRules(), validate, teacherController.deleteTeacher);
+router.delete('/:id', teacherController.deleteTeacher);
 
 
 module.exports = router;

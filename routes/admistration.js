@@ -10,7 +10,7 @@ router.get('/:id', adminController.getSingle);
 
 router.post('/', adminValidationRules(), validate, adminController.createAdmin);
 router.put('/:id', adminValidationRules(), validate, adminController.updateAdmin);
-router.delete('/:id', adminValidationRules(), validate, adminController.deleteAdmin);
+router.delete('/:id', adminController.deleteAdmin);
 
 module.exports = router;
 
