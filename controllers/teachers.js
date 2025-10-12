@@ -16,7 +16,7 @@ const getAll = async (req, res, next) => {
 };
 
 const getSingle = async (req, res, next) => {
-  //#swagger.tags = ['Teacher']
+  //#swagger.tags = ['Teachers']
   try {
     const teacherId = new ObjectId(req.params.id);
     const result = await mongodb.getDatabase().db('primaryschool').collection('teachers').find({ _id: teacherId });
@@ -33,7 +33,7 @@ const getSingle = async (req, res, next) => {
 };
 
 const createTeacher = async (req, res, next) => {
-  //#swagger.tags = ['Teacher']
+  //#swagger.tags = ['Teachers']
   try {
     const teacher = {
       name: req.body.name,
@@ -55,7 +55,7 @@ const createTeacher = async (req, res, next) => {
 };
 
 const updateTeacher = async (req, res, next) => {
-  //#swagger.tags = ['Teacher']
+  //#swagger.tags = ['Teachers']
   try {
     const teacherId = new ObjectId(req.params.id);
     const teacher = {
@@ -78,7 +78,7 @@ const updateTeacher = async (req, res, next) => {
 };
 
 const deleteTeacher = async (req, res, next) => {
-  //#swagger.tags = ['Teacher']
+  //#swagger.tags = ['Teachers']
   try {
     const teacherId = new ObjectId(req.params.id);
     const response = await mongodb.getDatabase().db('primaryschool').collection('teachers').deleteOne({ _id: teacherId });

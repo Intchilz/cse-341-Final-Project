@@ -5,7 +5,7 @@ const doc = {
         title: 'Primary School API',
         description: 'A simple Express Primary School API',
     },
-    host: 'localhost:3000',
+    host: 'cse-341-final-project-tb2p.onrender.com',
     schemes: ['https', 'http'],
 };
 
